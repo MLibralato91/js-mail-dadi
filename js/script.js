@@ -9,7 +9,7 @@ controlla che sia nella lista di chi può accedere,
 stampa un messaggio appropriato sull’esito del controllo.
 
 ---------------------------------------------------------
-*/ 
+*/
 
 let classEmail = [
     'lisa@email.com',
@@ -30,7 +30,7 @@ const btn = document.querySelector(' .myEmail');
 const btnReset = document.querySelector(' .myReset');
 
 btn.addEventListener('click', checkEmail);
-btnReset.addEventListener('click', resetEmail)
+btnReset.addEventListener('click', resetEmail);
 
 let message = document.getElementById('emailHelp');
 //console.log(typeof(message))
@@ -40,20 +40,20 @@ function checkEmail(e) {
     let freeEntry = '';
     let user = document.getElementById('emailForm').value;
     for (let i = 0; i < classEmail.length; i++) {
-        if(classEmail[i].toLowerCase() === user.toLowerCase()){
+        if (classEmail[i].toLowerCase() === user.toLowerCase()) {
             freeEntry = classEmail[i];
-        }        
+        }
     }
-    if(freeEntry){
+    if (freeEntry) {
         message.innerText = 'Benvenuto nella nostra area personale';
-        
-       // console.log(message);
 
-    }else {
+        // console.log(message);
+
+    } else {
         message.innerText = "Mi dispiace, non hai accesso all' area personale!";
     }
 }
-function resetEmail (){
+function resetEmail() {
     let user = document.getElementById('emailForm').value;
     user = '';
 }
@@ -69,20 +69,22 @@ Stabilire il vincitore, in base a chi fa il punteggio più alto.
 --------------------------------------------------------
 
 */
+const roll = document.querySelector('.myDice');
+roll.addEventListener('click', rollDice);
 
-let michele = Math.floor((Math.random() * 6) + 1);
+function rollDice() {
+    let michele = Math.floor((Math.random() * 6) + 1);
 
-let computer = Math.floor((Math.random() * 6) + 1);
+    let computer = Math.floor((Math.random() * 6) + 1);
 
-let result;
-console.log(michele, computer);
-if(michele === computer){
-    result = 'PAREGGIO!'   
-} else if (michele > computer) {
-    result = 'Hai vinto!'
-}else {
-    result= 'Hai perso!'
+    let result;
+    console.log(michele, computer);
+    if (michele === computer) {
+        result = 'PAREGGIO!'
+    } else if (michele > computer) {
+        result = 'Hai vinto!'
+    } else {
+        result = 'Hai perso!'
+    }
+
 }
-
-
-console.log(result);
