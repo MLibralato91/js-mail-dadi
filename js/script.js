@@ -8,12 +8,7 @@ Chiedi all’utente la sua email,
 controlla che sia nella lista di chi può accedere,
 stampa un messaggio appropriato sull’esito del controllo.
 
-----------------------------------------------------------
-Gioco dei dadi
-
-Generare un numero random da 1 a 6, sia per il giocatore sia per il computer.
-Stabilire il vincitore, in base a chi fa il punteggio più alto.
-
+---------------------------------------------------------
 */ 
 
 let classEmail = [
@@ -52,7 +47,7 @@ function checkEmail(e) {
     if(freeEntry){
         message.innerText = 'Benvenuto nella nostra area personale';
         
-        console.log(message);
+       // console.log(message);
 
     }else {
         message.innerText = "Mi dispiace, non hai accesso all' area personale!";
@@ -62,3 +57,32 @@ function resetEmail (){
     let user = document.getElementById('emailForm').value;
     user = '';
 }
+
+/*
+Esercitazione
+--------------------------------------------------------
+
+Gioco dei dadi
+
+Generare un numero random da 1 a 6, sia per il giocatore sia per il computer.
+Stabilire il vincitore, in base a chi fa il punteggio più alto.
+--------------------------------------------------------
+
+*/
+
+let michele = Math.floor((Math.random() * 6) + 1);
+
+let computer = Math.floor((Math.random() * 6) + 1);
+
+let result;
+console.log(michele, computer);
+if(michele === computer){
+    result = 'PAREGGIO!'   
+} else if (michele > computer) {
+    result = 'Hai vinto!'
+}else {
+    result= 'Hai perso!'
+}
+
+
+console.log(result);
