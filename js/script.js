@@ -29,4 +29,31 @@ let classEmail = [
     'emanuele@email.com',
     'mirko@email.com',
 ]
-console.log(classEmail);
+//console.log(classEmail);
+
+const btn = document.querySelector(' .myEmail');
+const btnReset = document.querySelector(' .myReset');
+
+btn.addEventListener('click', checkEmail);
+btnReset.addEventListener('click', resetEmail)
+
+function checkEmail(e) {
+    e.preventDefault();
+    let freeEntry = '';
+    let user = document.getElementById('emailForm').value;
+    for (let i = 0; i < classEmail.length; i++) {
+        if(classEmail[i].toLowerCase() === user.toLowerCase()){
+            freeEntry = classEmail[i];
+        }        
+    }
+    if(freeEntry){
+        console.log('Benvenuto nella nostra area personale');
+
+    }else {
+        console.log("Mi dispiace, non hai accesso all' area personale!")
+    }
+}
+function resetEmail (){
+    let user = document.getElementById('emailForm').value;
+    user = '';
+}
