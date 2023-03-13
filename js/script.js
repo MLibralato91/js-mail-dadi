@@ -72,12 +72,49 @@ Stabilire il vincitore, in base a chi fa il punteggio più alto.
 const roll = document.querySelector('.myDice');
 roll.addEventListener('click', rollDice);
 
+const diceOne = document.querySelector('.oneDice', '.boxDiceComputer .oneDice');
+const diceTwo = document.querySelector('.twoDice');
+const diceTree = document.querySelector('.treeDice');
+const diceFour = document.querySelector('.fourDice');
+const diceFive = document.querySelector('.fiveDice');
+const diceSix = document.querySelector('.sixDice');
+let numberDice;
+
+
 function rollDice() {
     let michele = Math.floor((Math.random() * 6) + 1);
 
     let computer = Math.floor((Math.random() * 6) + 1);
 
     let result;
+
+    if(michele === 1 , computer === 1){
+        diceOne.classList.remove('d-none');
+        
+    }
+    if(michele === 2 || computer === 2){
+        diceTwo.classList.remove('d-none');
+        
+    }
+    if(michele === 3 || computer === 3){
+        diceTree.classList.remove('d-none');
+        
+    }
+    if(michele === 4 || computer === 4){
+        diceFour.classList.remove('d-none');
+        
+    }
+    if(michele === 5 || computer === 5){
+        diceFive.classList.remove('d-none');
+        
+    }
+    if(michele === 6 || computer === 6){
+        diceSix.classList.remove('d-none');
+        
+    }    
+
+        
+
     console.log(michele, computer);
     if (michele === computer) {
         result = 'PAREGGIO!'
