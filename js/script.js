@@ -37,7 +37,7 @@ const btnReset = document.querySelector(' .myReset');
 btn.addEventListener('click', checkEmail);
 btnReset.addEventListener('click', resetEmail)
 
-let message = document.getElementById('emailHelp').innerText;
+let message = document.getElementById('emailHelp');
 //console.log(typeof(message))
 
 function checkEmail(e) {
@@ -51,10 +51,11 @@ function checkEmail(e) {
     }
     if(freeEntry){
         message.innerText = 'Benvenuto nella nostra area personale';
+        
         console.log(message);
 
     }else {
-        message = "Mi dispiace, non hai accesso all' area personale!";
+        message.innerText = "Mi dispiace, non hai accesso all' area personale!";
     }
 }
 function resetEmail (){
