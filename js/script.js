@@ -72,14 +72,14 @@ Stabilire il vincitore, in base a chi fa il punteggio più alto.
 const roll = document.querySelector('.myDice');
 roll.addEventListener('click', rollDice);
 
-const diceOne = document.querySelector('.oneDice', '.boxDiceComputer .oneDice');
-const diceTwo = document.querySelector('.twoDice');
-const diceTree = document.querySelector('.treeDice');
-const diceFour = document.querySelector('.fourDice');
-const diceFive = document.querySelector('.fiveDice');
-const diceSix = document.querySelector('.sixDice');
+const diceOne = document.querySelectorAll('.oneDice');
+const diceTwo = document.querySelectorAll('.twoDice');
+const diceTree = document.querySelectorAll('.treeDice');
+const diceFour = document.querySelectorAll('.fourDice');
+const diceFive = document.querySelectorAll('.fiveDice');
+const diceSix = document.querySelectorAll('.sixDice');
 let numberDice;
-
+console.log(diceOne);
 
 function rollDice() {
     let michele = Math.floor((Math.random() * 6) + 1);
@@ -88,28 +88,35 @@ function rollDice() {
 
     let result;
 
-    if(michele === 1 , computer === 1){
-        diceOne.classList.remove('d-none');
+    if(michele === 1 || computer === 1){
+        diceOne[0].classList.remove('d-none');
+        diceOne[1].classList.remove('d-none');
         
     }
-    if(michele === 2 || computer === 2){
-        diceTwo.classList.remove('d-none');
+    if(michele === 2 && computer === 2){
+        diceTwo[0].classList.remove('d-none');
+        diceTwo[1].classList.remove('d-none');
         
     }
-    if(michele === 3 || computer === 3){
-        diceTree.classList.remove('d-none');
+    if(michele === 3 && computer === 3){
+        diceTree[0].classList.remove('d-none');
+        diceTree[1].classList.remove('d-none');
+
         
     }
-    if(michele === 4 || computer === 4){
-        diceFour.classList.remove('d-none');
+    if(michele === 4 && computer === 4){
+        diceFour[0].classList.remove('d-none');
+        diceFour[1].classList.remove('d-none');
         
     }
-    if(michele === 5 || computer === 5){
-        diceFive.classList.remove('d-none');
+    if(michele === 5 && computer === 5){
+        diceFive[0].classList.remove('d-none');
+        diceFive[1].classList.remove('d-none');
         
     }
-    if(michele === 6 || computer === 6){
-        diceSix.classList.remove('d-none');
+    if(michele === 6 && computer === 6){
+        diceSix[0].classList.remove('d-none');
+        diceSix[1].classList.remove('d-none');
         
     }    
 
